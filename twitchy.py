@@ -18,20 +18,20 @@ if __name__ == '__main__':
 
     try:
         for message in p.listen():
-            if message.channel == request_channel:
+            if message['channel'] == request_channel:
                 r.publish('pfd.inputs', up_input)
                 r.publish('pfd.inputs', down_input)
-            elif message.channel == up_channel:
-                if message.message == "input." + up_input + ".on":
+            elif message['channel'] == up_channel:
+                if message['message'] == "input." + up_input + ".on":
                     r.publish('twitchy.switch', 'switch.up')
                     r.publish('twitchy.switch.up', 'up.on')
-                elif message.message == "input." + up_input + ".off":
+                elif message['message'] == "input." + up_input + ".off":
                     r.publish('twitchy.switch.up', 'up.off')
-            elif message.channel == down_channel:
-                if message.message == "input." + down_input + ".on":
+            elif message['channel'] == down_channel:
+                if message['message'] == "input." + down_input + ".on":
                     r.publish('twitchy.switch', 'switch.down')
                     r.publish('twitchy.switch.down', 'down.on')
-                elif message.message == "input." + down_input + ".off":
+                elif message['message'] == "input." + down_input + ".off":
                     r.publish('twitchy.switch.down', 'down.off')
     except:
         print("Goodbye")
