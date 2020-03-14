@@ -13,21 +13,21 @@ Format: \<channel> "message"
 
 **Outputs**
 
-* \<twitchy-switch> "switch-up"
+* \<twitchy.switch> "switch.up"
   * The switch has been moved to the up position
   * Triggered automatically
-* \<twitchy-switch> "switch-down"
+* \<twitchy.switch> "switch.down"
   * The switch has been moved to the down position
   * Triggered automatically
-* \<twitchy-switch-up> "up-on"
+* \<twitchy.switch.up> "up.on"
   * The switch has entered the up position
   * Triggered automatically
-* \<twitchy-switch-up> "up-off"
+* \<twitchy.switch.up> "up.off"
   * The switch has left the up position
   * Triggered automatically
-* \<twitchy-switch-down> "down-on"
+* \<twitchy.switch.down> "down.on"
   * The switch has entered the down position
   * Triggered automatically
-* \<twitchy-switch-down> "down-off"
+* \<twitchy.switch.down> "down.off"
   * The switch has left the down position
   * Triggered automatically
