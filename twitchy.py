@@ -34,4 +34,5 @@ if __name__ == '__main__':
                 elif message['data'] == "input." + down_input + ".off":
                     r.publish('twitchy.switch.down', 'down.off')
     except:
+        p.close()
         print("Goodbye")
