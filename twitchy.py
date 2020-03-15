@@ -10,7 +10,8 @@ if __name__ == '__main__':
     request_channel = 'twitchy'
 
     print('Startup')
-    r = redis.Redis(host='192.168.0.1', port=6379, db=0)
+    r = redis.Redis(host='192.168.0.1', port=6379,
+                    db=0, decode_responses=True)
     p = r.pubsub(ignore_subscribe_messages=True)
     p.subscribe(request_channel, up_channel, down_channel)
     print('Startup complete')
