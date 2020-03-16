@@ -22,8 +22,9 @@ def execute():
     p = r.pubsub(ignore_subscribe_messages=True)
     p.subscribe(request_channel, up_channel, down_channel)
 
-    print('Startup complete')
+    r.publish('services', 'twitchy.on')
     systemd.daemon.notify('READY=1')
+    print('Startup complete')
 
     try:
         for message in p.listen():
@@ -46,6 +47,7 @@ def execute():
                     r.publish('twitchy.switch.down', 'down.off')
     except:
         p.close()
+        r.publish('services', 'twitchy.off')
         print('Goodbye')
 
 
