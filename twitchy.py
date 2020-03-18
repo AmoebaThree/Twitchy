@@ -28,8 +28,8 @@ def execute():
     try:
         for message in p.listen():
             if message['channel'] == request_channel:
-                r.publish('pfd.inputs', up_input)
-                r.publish('pfd.inputs', down_input)
+                r.publish('pfd.input', up_input)
+                r.publish('pfd.input', down_input)
 
             elif message['channel'] == up_channel:
                 if message['data'] == message_up_on:
