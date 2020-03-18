@@ -1,6 +1,5 @@
 import systemd.daemon
 import redis
-import time
 
 
 def execute():
